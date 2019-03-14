@@ -17,4 +17,5 @@ cows_long_filtered %>%
   write_csv("data/cows_weight_sqrt.csv")
 
 ggplot(cows_long, aes(measurement, weight)) +
-  geom_point()
+  geom_point() +
+  geom_label(label=rownames(cows_long))
