@@ -11,3 +11,6 @@ cows_long_filtered <- cows_long %>%
 cows_long_filtered %>% 
   mutate(weight_sqrt = sqrt(weight)) %>% 
   write_csv("data/cows_weight_sqrt.csv")
+
+ggplot(cows_long, aes(measurement, weight)) +
+  geom_point()
