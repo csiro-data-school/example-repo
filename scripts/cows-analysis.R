@@ -7,3 +7,7 @@ cows_long <- cows %>%
 
 cows_long_filtered <- cows_long %>% 
   filter(measurement == "weight1")
+
+cows_long_filtered %>% 
+  mutate(weight_sqrt = sqrt(weight)) %>% 
+  write_csv("data/cows_weight_sqrt.csv")
