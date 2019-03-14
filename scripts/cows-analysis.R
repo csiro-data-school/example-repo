@@ -5,6 +5,10 @@ cows <- read_csv("data/cows.csv")
 cows_long <- cows %>% 
   gather(measurement, weight, -id)
 
+cows_summarised_weight <- cows_long %>%
+  group_by(measurement) %>%
+  summarise(mean_weight = mean(weight), sd_weight = sd(weight))
+
 cows_long_filtered <- cows_long %>% 
   filter(measurement == "weight1")
 
